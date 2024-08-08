@@ -2,28 +2,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 2px solid #000;
-    border-radius: 10px;
-    width: 300px;
+    justify-content: space-between; /* ריווח מתאים בין האלמנטים */
+    border: 3px solid #008080; /* מסגרת עבה בצבע טורקיז */
+    border-radius: 15px; /* פינות מעוגלות */
+    width: 300px; /* גודל מתאים ללוח משחק */
+    height: 500px; /* גובה מתאים ללוח משחק */
     padding: 20px;
     margin: 20px auto;
-    background-color: #f9f9f9;
+    background-color: #430b1b; /* צבע רקע כהה */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* הצללה למסגרת */
+}
+
+
+.inActive{
+    opacity: 0.5;
 }
 
 .board h1 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #008080; /* צבע טקסט טורקיז */
 }
 
 .board h2 {
     font-size: 20px;
     margin-bottom: 20px;
+    color: #008080; /* צבע טקסט טורקיז */
 }
 
 .board h4 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: #008080; /* צבע טקסט טורקיז */
 }
 
 .number-manipulator {
@@ -35,6 +45,7 @@
 .number-manipulator h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    color: #008080; /* צבע טקסט טורקיז */
 }
 
 .number-manipulator button {
@@ -42,6 +53,15 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #008080; /* צבע רקע הכפתורים טורקיז */
+    color: #fff; /* צבע טקסט הכפתורים לבן */
+    transition: background-color 0.3s ease; /* אפקט מעבר חלק */
+}
+
+.number-manipulator button:hover {
+    background-color: #006666; /* צבע רקע בזמן ריחוף */
 }
 
 .number-manipulator button:disabled {
@@ -49,7 +69,14 @@
     cursor: not-allowed;
 }
 
-.steps-counter {
+.stepsCounter {
     margin-top: 20px;
     font-size: 18px;
+    color: #008080; /* צבע טקסט טורקיז */
+}
+
+.scores {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #008080; /* צבע טקסט טורקיז */
 }

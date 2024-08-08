@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import NumberManipulator from './NumberManipulator';
-import '../styleBoard.module.css';
+import classes from '../styleBoard.module.css';
 
 function Board(props) {
     const getRandomNumber = () => Math.floor(Math.random() * 100);
@@ -8,10 +8,12 @@ function Board(props) {
     const [number, setNumber] = useState(getRandomNumber());
     const [steps, setSteps] = useState(0);
     const [gameOver, setGameOver] = useState(false);
+    const [scores, setScores] = useState([]);
 
     const handleUpdateNumber = (newNumber) => {
         if (newNumber === 100) {
             setGameOver(true);
+            setScores([...scores, steps + 1]);  // עדכון מערך הציונים
         }
         setNumber(newNumber);
         setSteps(steps + 1);
@@ -24,19 +26,18 @@ function Board(props) {
     };
 
     return (
-        <div className="board">
-            
-            <h2> player: {props.name}</h2>
-            <h4>Current number: {number}</h4>
+        <div className={`${classes.board} ${!props.isActive && classes.inActive}`}>
+            <h2>Player: {props.name}</h2>
             {gameOver ? (
                 <div>
                     <h3>Game Over! You've reached 100!</h3>
                     <button onClick={handleNewGame}>Start New Game</button>
                 </div>
             ) : (
-                <NumberManipulator number={number} updateNumber={handleUpdateNumber} />
+                <NumberManipulator number={number} updateNumber={handleUpdateNumber} isActive={props.isActive}/>
             )}
-            <div className="steps-counter">Steps: {steps}</div>
+            <div className={classes.stepsCounter}>Steps: {steps}</div>
+            <div className={classes.scores}>Scores: {scores.join(', ')}</div>
         </div>
     );
 }
