@@ -2,6 +2,7 @@ import React from "react";
 import '../styleBoard.module.css';
 
 const NumberManipulator = ({ number, updateNumber,isActive }) => {
+    
     const plusOne = () => updateNumber(number + 1);
     const minusOne = () => updateNumber(number - 1);
     const double = () => updateNumber(number * 2);

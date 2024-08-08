@@ -3,6 +3,8 @@ import NumberManipulator from './NumberManipulator';
 import classes from '../styleBoard.module.css';
 
 function Board(props) {
+    console.log(props.isActive);
+    
     const getRandomNumber = () => Math.floor(Math.random() * 100);
 
     const [number, setNumber] = useState(getRandomNumber());
@@ -17,6 +19,7 @@ function Board(props) {
         }
         setNumber(newNumber);
         setSteps(steps + 1);
+        props.moveTurn()
     };
 
     const handleNewGame = () => {
@@ -26,7 +29,7 @@ function Board(props) {
     };
 
     return (
-        <div className={`${classes.board} ${!props.isActive && classes.inActive}`}>
+        <div className={`${classes.board}`}>
             <h2>Player: {props.name}</h2>
             {gameOver ? (
                 <div>
