@@ -28,7 +28,7 @@ function Board(props) {
 
   return (
     <div className={`${classes.board}`}>
-      <h2>Player: {props.name}</h2>
+      <h2>{props.name}</h2>
       {gameOver ? (
         <div>
           <h3>Game Over! You've reached 100!</h3>

@@ -1,83 +1,74 @@
-.board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; /* ריווח מתאים בין האלמנטים */
-    border: 3px solid #008080; /* מסגרת עבה בצבע טורקיז */
-    border-radius: 15px; /* פינות מעוגלות */
-    width: 300px; /* גודל מתאים ללוח משחק */
-    height: 500px; /* גובה מתאים ללוח משחק */
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #430b1b; /* צבע רקע כהה */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* הצללה למסגרת */
+* {
+  margin: 0px;
 }
-
-
-/* .inActive{
-    cursor: not-allowed;
-    opacity: 0.5;
-} */
-
-.board h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #008080; /* צבע טקסט טורקיז */
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 13px solid #2a3241;
+  border-radius: 25px;
+  width: 300px;
+  height: 500px;
+  padding: 20px;
+  background-color: #4b5c80;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .board h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #008080; /* צבע טקסט טורקיז */
+  font-size: 40px;
+  color: #8f939b;
 }
 
 .board h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #008080; /* צבע טקסט טורקיז */
+  font-size: 18px;
+  /* margin-bottom: 10px; */
+  color: #8f939b;
 }
 
-.number-manipulator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.numberManipulator {
+  display: flex;
+  align-items: center;
 }
 
-.number-manipulator h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #008080; /* צבע טקסט טורקיז */
+.num {
+  font-size: 80px;
+  /* margin-bottom: 20px; */
+  color: #ffffff;
 }
 
-.number-manipulator button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #008080; /* צבע רקע הכפתורים טורקיז */
-    color: #fff; /* צבע טקסט הכפתורים לבן */
-    transition: background-color 0.3s ease; /* אפקט מעבר חלק */
+.numberManipulator button {
+  /* margin: 5px; */
+  padding: 10px 20px;
+  font-size: 25px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  border: #414b60 solid 2px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #414b60;
+  transition: all 0.3s ease;
 }
 
-.number-manipulator button:hover {
-    background-color: #006666; /* צבע רקע בזמן ריחוף */
+.numberManipulator button:hover {
+  background-color: #414b60;
+  color: #ffffff;
 }
 
-.number-manipulator button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.numberManipulator button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .stepsCounter {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #008080; /* צבע טקסט טורקיז */
+    font-size: 24px;
+    color: #ffffff; 
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+.scores{
+  font-size: 24px;
+  color: #8f939b; 
 }
 
-.scores {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #008080; /* צבע טקסט טורקיז */
-}

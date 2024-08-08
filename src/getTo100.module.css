@@ -32,8 +32,9 @@
   margin: 0;
   font-weight: 500;
 }
-.mainBoard{
-display: grid;
-grid-template-columns: repeat(2,1fr);
-gap: 30px;
+.mainBoard {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
 }
