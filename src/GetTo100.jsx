@@ -1,4 +1,4 @@
-import Board from "./components/Board";
+import Board from "./components/MainBoard";
 import Registration from "./components/Registration";
 import { useState } from "react";
 function GetTo100() {
