@@ -2,16 +2,24 @@ import players from "./PlayersLIst";
 import classes from "../getTo100.module.css";
 import Board from "./Board";
 import { useState } from "react";
-let current = -1;
+
+let c = 0;
 
 function MainBoard() {
-  const [currentPlayerId, setCurrentPlayerId] = useState(1);
+  const [currentPlayerId, setCurrentPlayerId] = useState(2);
+  if (c === 0) {
+    const activePlayers = players.filter((pl) => pl.isActive);
+    setCurrentPlayerId(activePlayers[0].id);
+    c++;
+  }
 
   function moveTurn() {
-    const arr = players.filter((pl) => pl.isActive);
-    current++;
-    if (current === arr.length) current = 0;    
-    setCurrentPlayerId(arr[current]);   
+    setCurrentPlayerId((prevId) => {
+      const activePlayers = players.filter((pl) => pl.isActive);
+      const currentIndex = activePlayers.findIndex((pl) => pl.id === prevId);
+      const nextIndex = (currentIndex + 1) % activePlayers.length;
+      return activePlayers[nextIndex].id;
+    });
   }
 
   return (
