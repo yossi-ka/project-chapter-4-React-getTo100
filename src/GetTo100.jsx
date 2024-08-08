@@ -9,5 +9,4 @@ function GetTo100() {
     <Registration setTheresPlayers={setTheresPlayers} />
   );
 }
-
 export default GetTo100;
