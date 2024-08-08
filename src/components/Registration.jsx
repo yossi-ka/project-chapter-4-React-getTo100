@@ -2,22 +2,79 @@ import players from "./PlayersLIst";
 import classes from "../getTo100.module.css";
 
 function Registration(props) {
-  function send(event) {
+  function start(event) {
     event.preventDefault();
-    // check if player exist
+    let playersAreOK = true;
+    const P = event.target.querySelectorAll("p");
+    P.forEach((p) => {
+      if (p.style.display === "block") {
+        playersAreOK = false;
+      } else {
+        const input = p.previousElementSibling;
+        if (input && input.value !== "") {
+          updatePlayer(input.value);
+        }
+      }
+    });
+    if (playersAreOK && min2players()) props.setTheresPlayers(true);
   }
+
   return (
     <>
-      <form action="" onSubmit={send} className={classes.myForm}>
+      <form action="" onSubmit={start} className={classes.myForm}>
         <h1>Enter the players (2-4)</h1>
-        <input type="text" placeholder="Email or Name" required />
-        <input type="text" placeholder="Email or Name" required />
-        <input type="text" placeholder="Email or Name" />
-        <input type="text" placeholder="Email or Name" />
+        <div className={classes.divInput}>
+          <input
+            type="text"
+            placeholder="Email or Name"
+            onChange={warning}
+            required
+          />
+          <p style={{ display: "none" }}>player not exist</p>
+        </div>
+        <div className={classes.divInput}>
+          <input
+            type="text"
+            placeholder="Email or Name"
+            onChange={warning}
+            required
+          />
+          <p style={{ display: "none" }}>player not exist</p>
+        </div>
+        <div className={classes.divInput}>
+          <input type="text" placeholder="Email or Name" onChange={warning} />
+          <p style={{ display: "none" }}>player not exist</p>
+        </div>
+        <div className={classes.divInput}>
+          <input type="text" placeholder="Email or Name" onChange={warning} />
+          <p style={{ display: "none" }}>player not exist</p>
+        </div>
         <button type="submit">Start</button>
       </form>
     </>
   );
+}
+
+function warning(event) {
+  const value = event.target.value;
+  const ex = players.filter(
+    (play) => value === play.email || value === play.name
+  );
+  if (ex.length === 0 && value !== "")
+    event.target.nextElementSibling.style.display = "block";
+  else event.target.nextElementSibling.style.display = "none";
+}
+
+function min2players() {
+  const active = players.filter((pl) => pl.isActive);
+  return active.length >= 2 ? true : false;
+}
+
+function updatePlayer(value) {
+  const player = players.filter(
+    (pl) => pl.email === value || pl.name === value
+  );
+  if (player.length > 0) players[players.indexOf(player[0])].isActive = true;
 }
 
 export default Registration;

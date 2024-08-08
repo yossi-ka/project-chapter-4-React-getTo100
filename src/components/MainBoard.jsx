@@ -1,11 +1,13 @@
 import players from "./PlayersLIst";
-function Board() {
+import Board from "./Board";
+function MainBoard() {
   return (
     <>
-      <h1>
-        fill the players' email: <p>(2-4)</p>
-      </h1>
+      <h1>Welcome to 'Get To 100'</h1>
+      {players.map(
+        (pl) => pl.isActive && <Board name={pl.name} scores={pl.scores} />
+      )}
     </>
   );
 }
-export default Board;
+export default MainBoard;
