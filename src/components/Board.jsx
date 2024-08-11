@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import NumberManipulator from "./NumberManipulator";
 import classes from "../styleBoard.module.css";
-// import players from "./PlayersList";
-const play = localStorage.getItem("PlayersList")
-const players = JSON.parse(play)
+import {players} from "../GetTo100";
 
 function Board(props) {
   const getRandomNumber = () => Math.floor(Math.random() * 100);

@@ -1,7 +1,5 @@
-// import players from "./PlayersList";
+import {players} from "../GetTo100";
 import classes from "../getTo100.module.css";
-const play = localStorage.getItem("PlayersList")
-const players = JSON.parse(play)
 
 function Registration(props) {
   function start(event) {
