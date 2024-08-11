@@ -1,7 +1,9 @@
-import players from "./PlayersList";
+// import players from "./PlayersList";
 import classes from "../getTo100.module.css";
 import Board from "./Board";
 import { useState } from "react";
+const play = localStorage.getItem("PlayersList")
+const players = JSON.parse(play)
 
 const control = {
   c: 0,
