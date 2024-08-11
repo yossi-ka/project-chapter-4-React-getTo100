@@ -36,20 +36,17 @@ function MainBoard() {
     <>
       <h1>Welcome to 'Get To 100'</h1>
       <div className={classes.mainBoard}>
-        {players.map(
-          (pl) =>
-            pl.isActive && (
-              <Board
-                key={pl.id}
-                id={pl.id}
-                name={pl.name}
-                scores={pl.scores}
-                isActive={pl.id === currentPlayerId}
-                moveTurn={moveTurn}
-                control={control}
-              />
-            )
-        )}
+        {activePlayers.map((pl) => (
+          <Board
+            key={pl.id}
+            id={pl.id}
+            name={pl.name}
+            scores={pl.scores}
+            isActive={pl.id === currentPlayerId}
+            moveTurn={moveTurn}
+            control={control}
+          />
+        ))}
       </div>
     </>
   );

@@ -28,7 +28,7 @@ function Board(props) {
   };
 
   const handleQuitGame = () => {
-    const x = players.forEach((pl) => {
+    players.forEach((pl) => {
       if (pl.id === props.id) pl.isActive = false;
     });
     props.control.c = 0;
