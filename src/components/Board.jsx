@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NumberManipulator from "./NumberManipulator";
 import classes from "../styleBoard.module.css";
-import {players} from "../GetTo100";
+import { players } from "../GetTo100";
 
 function Board(props) {
   const getRandomNumber = () => Math.floor(Math.random() * 100);
@@ -14,14 +14,16 @@ function Board(props) {
   const handleUpdateNumber = (newNumber) => {
     if (newNumber === 100) {
       setGameOver(true);
-      setScores([...scores, steps + 1]);
+      const scrs = [...scores, steps + 1];
+      setScores(scrs);
+      players.filter((pl) => pl.id === props.id)[0].scores.push(steps + 1);
+      localStorage.setItem("PlayersList", JSON.stringify(players));
     }
     setNumber(newNumber);
     setSteps(steps + 1);
-    if (newNumber!==100) {
-       props.moveTurn();
+    if (newNumber !== 100) {
+      props.moveTurn();
     }
-   
   };
 
   const handleNewGame = () => {
