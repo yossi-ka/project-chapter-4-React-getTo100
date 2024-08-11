@@ -1,10 +1,10 @@
-import Board from "./components/MainBoard";
+import MainBoard from "./components/MainBoard";
 import Registration from "./components/Registration";
 import { useState } from "react";
 function GetTo100() {
   const [theresPlayers, setTheresPlayers] = useState(false);
   return theresPlayers ? (
-    <Board />
+    <MainBoard setTheresPlayers={setTheresPlayers} />
   ) : (
     <Registration setTheresPlayers={setTheresPlayers} />
   );

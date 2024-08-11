@@ -8,7 +8,7 @@ const control = {
   p: 0,
 };
 
-function MainBoard() {
+function MainBoard(props) {
   const [currentPlayerId, setCurrentPlayerId] = useState(1);
   const [activePlayers, setActivePlayers] = useState([]);
 
@@ -26,6 +26,7 @@ function MainBoard() {
   function moveTurn() {
     setCurrentPlayerId((prevId) => {
       const activePlayers = players.filter((pl) => pl.isActive);
+      if (activePlayers.length === 0) props.setTheresPlayers(false);
       const currentIndex = activePlayers.findIndex((pl) => pl.id === prevId);
       const nextIndex = (currentIndex + 1) % activePlayers.length;
       return activePlayers[nextIndex].id;
