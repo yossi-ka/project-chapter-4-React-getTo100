@@ -14,3 +14,4 @@ function GetTo100() {
   );
 }
 export default GetTo100;
+export const players = () => localStorage.getItem("PlayersList");
