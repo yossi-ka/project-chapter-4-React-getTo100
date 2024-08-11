@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NumberManipulator from "./NumberManipulator";
 import classes from "../styleBoard.module.css";
+import players from "./PlayersLIst";
 
 function Board(props) {
   const getRandomNumber = () => Math.floor(Math.random() * 100);
@@ -13,7 +14,7 @@ function Board(props) {
   const handleUpdateNumber = (newNumber) => {
     if (newNumber === 100) {
       setGameOver(true);
-      setScores([...scores, steps + 1]); // עדכון מערך הציונים
+      setScores([...scores, steps + 1]);
     }
     setNumber(newNumber);
     setSteps(steps + 1);
@@ -26,13 +27,22 @@ function Board(props) {
     setGameOver(false);
   };
 
+  const handleQuitGame = () => {
+    const x = players.forEach((pl) => {
+      if (pl.id === props.id) pl.isActive = false;
+    });
+    props.control.c = 0;
+    props.moveTurn();
+  };
+
   return (
-    <div className={`${classes.board}`}>
+    <div className={classes.board}>
       <h2>{props.name}</h2>
       {gameOver ? (
         <div>
           <h3>Game Over! You've reached 100!</h3>
           <button onClick={handleNewGame}>Start New Game</button>
+          <button onClick={handleQuitGame}>Quit Game</button>
         </div>
       ) : (
         <NumberManipulator

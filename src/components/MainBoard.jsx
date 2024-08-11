@@ -3,15 +3,26 @@ import classes from "../getTo100.module.css";
 import Board from "./Board";
 import { useState } from "react";
 
-let c = 0;
+const control = {
+  c: 0,
+  p: 0,
+};
 
 function MainBoard() {
-  const [currentPlayerId, setCurrentPlayerId] = useState(2);
-  if (c === 0) {
-    const activePlayers = players.filter((pl) => pl.isActive);
-    setCurrentPlayerId(activePlayers[0].id);
-    c++;
-  }
+  const [currentPlayerId, setCurrentPlayerId] = useState(1);
+  const [activePlayers, setActivePlayers] = useState([]);
+
+  control.c === 0 &&
+    (() => {
+      const AP = players.filter((pl) => pl.isActive);
+      setActivePlayers(AP);
+      console.log(players);
+      if (control.p === 0 && AP.length !== 0) {
+        setCurrentPlayerId(AP[0].id);
+        control.p++;
+      }
+      control.c++;
+    })();
 
   function moveTurn() {
     setCurrentPlayerId((prevId) => {
@@ -31,10 +42,12 @@ function MainBoard() {
             pl.isActive && (
               <Board
                 key={pl.id}
+                id={pl.id}
                 name={pl.name}
                 scores={pl.scores}
                 isActive={pl.id === currentPlayerId}
                 moveTurn={moveTurn}
+                control={control}
               />
             )
         )}
