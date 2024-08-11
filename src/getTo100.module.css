@@ -4,6 +4,26 @@
   gap: 30px;
 }
 
+.divInput {
+  position: relative;
+}
+
+.divInput input {
+  font-size: 20px;
+  padding-right: 100px;
+}
+
+.divInput p {
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
 .modalOverlay {
   position: fixed;
   top: 0;

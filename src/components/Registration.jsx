@@ -21,7 +21,7 @@ function Registration(props) {
 
   return (
     <>
-      <form action="" onSubmit={start} className={classes.myForm}>
+      <form onSubmit={start} className={classes.myForm}>
         <h1>Enter the players (2-4)</h1>
         <div className={classes.divInput}>
           <input

@@ -3,7 +3,8 @@ import Registration from "./components/Registration";
 import { useState } from "react";
 import pls from "./components/PlayersList";
 const play = JSON.stringify(pls);
-localStorage.setItem("PlayersList", play);
+if (!localStorage.getItem("PlayersList"))
+  localStorage.setItem("PlayersList", play);
 
 function GetTo100() {
   const [theresPlayers, setTheresPlayers] = useState(false);
