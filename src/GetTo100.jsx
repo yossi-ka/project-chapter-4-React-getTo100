@@ -1,8 +1,8 @@
 import MainBoard from "./components/MainBoard";
 import Registration from "./components/Registration";
 import { useState } from "react";
-import players from "./components/PlayersList";
-const play = JSON.stringify(players);
+import pls from "./components/PlayersList";
+const play = JSON.stringify(pls);
 localStorage.setItem("PlayersList", play);
 
 function GetTo100() {
