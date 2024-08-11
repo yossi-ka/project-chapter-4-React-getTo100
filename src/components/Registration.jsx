@@ -1,4 +1,4 @@
-import players from "./PlayersLIst";
+import players from "./PlayersList";
 import classes from "../getTo100.module.css";
 
 function Registration(props) {

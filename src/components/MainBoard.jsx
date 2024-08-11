@@ -1,4 +1,4 @@
-import players from "./PlayersLIst";
+import players from "./PlayersList";
 import classes from "../getTo100.module.css";
 import Board from "./Board";
 import { useState } from "react";
@@ -16,7 +16,6 @@ function MainBoard() {
     (() => {
       const AP = players.filter((pl) => pl.isActive);
       setActivePlayers(AP);
-      console.log(players);
       if (control.p === 0 && AP.length !== 0) {
         setCurrentPlayerId(AP[0].id);
         control.p++;
