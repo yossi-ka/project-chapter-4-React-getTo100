@@ -18,7 +18,10 @@ function Board(props) {
     }
     setNumber(newNumber);
     setSteps(steps + 1);
-    props.moveTurn();
+    if (newNumber!==100) {
+       props.moveTurn();
+    }
+   
   };
 
   const handleNewGame = () => {

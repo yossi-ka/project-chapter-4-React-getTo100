@@ -25,11 +25,11 @@ function MainBoard(props) {
 
   function moveTurn() {
     setCurrentPlayerId((prevId) => {
-      const activePlayers = players.filter((pl) => pl.isActive);
-      if (activePlayers.length === 0) props.setTheresPlayers(false);
-      const currentIndex = activePlayers.findIndex((pl) => pl.id === prevId);
-      const nextIndex = (currentIndex + 1) % activePlayers.length;
-      return activePlayers[nextIndex].id;
+      const ap2 = players.filter((pl) => pl.isActive);
+      if (ap2.length === 0) props.setTheresPlayers(false);
+      const currentIndex = ap2.findIndex((pl) => pl.id === prevId);
+      const nextIndex = (currentIndex + 1) % ap2.length;
+      return ap2[nextIndex].id;
     });
   }
 
