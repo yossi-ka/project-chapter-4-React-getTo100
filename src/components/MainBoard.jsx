@@ -2,7 +2,7 @@ import classes from "../getTo100.module.css";
 import Board from "./Board";
 import { useState } from "react";
 import {players} from "../GetTo100";
-
+import Top from "./TopScore";
 
 const control = {
   c: 0,
@@ -37,6 +37,8 @@ function MainBoard(props) {
   return (
     <>
       <h1>Welcome to 'Get To 100'</h1>
+      <button onClick={Top}>hi level score</button>
+      <Top />
       <div className={classes.mainBoard}>
         {activePlayers.map((pl) => (
           <Board

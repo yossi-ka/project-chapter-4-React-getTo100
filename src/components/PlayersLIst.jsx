@@ -1,24 +1,24 @@
 const players = [
   {
     id: 1,
-    name: "yk",
+    name: "1",
     email: "yk111067@gmail.com",
     isActive: false,
-    scores: [],
+    scores: [5,5,5,9],
   },
   {
     id: 2,
-    name: "simcha berkovitz",
+    name: "2",
     email: "b5860344@gmail.com ",
     isActive: false,
     scores: [],
   },
   {
     id: 3,
-    name: "sy",
+    name: "3",
     email: "sh6744998@gmail.com",
     isActive: false,
-    scores: [],
+    scores: [8,7,4,1],
   },
   {
     id: 4,
