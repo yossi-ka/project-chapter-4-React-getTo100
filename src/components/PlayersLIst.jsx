@@ -4,7 +4,7 @@ const players = [
     name: "1",
     email: "yk111067@gmail.com",
     isActive: false,
-    scores: [5,5,5,9],
+    scores: [],
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const players = [
     name: "3",
     email: "sh6744998@gmail.com",
     isActive: false,
-    scores: [8,7,4,1],
+    scores: [],
   },
   {
     id: 4,
